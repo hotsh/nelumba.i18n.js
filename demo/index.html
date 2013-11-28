@@ -1,0 +1,192 @@
+<!DOCTYPE>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>
+      lotus.i18n
+    </h1>
+
+    <h2>
+      Actor (Subject)
+    </h2>
+
+    <label for="actor">name:</label>
+    <input type="text" id="actor">
+    <label for="actor">or pronoun:</label>
+    <select id="actor_pronoun">
+      <option value="none">---</option>
+      <option value="he">he</option>
+      <option value="she">she</option>
+      <option value="you">you</option>
+      <option value="e">e</option>
+      <option value="ey">ey</option>
+      <option value="Tho">Tho</option>
+      <option value="hu">hu</option>
+      <option value="per">per</option>
+      <option value="thon">thon</option>
+      <option value="jee">jee</option>
+      <option value="ve">ve</option>
+      <option value="xe">xe</option>
+      <option value="ze">ze</option>
+      <option value="zhe">zhe</option>
+    </select>
+    <label for="actor_plural">
+      <input type="checkbox" name="actor_plural" id="actor_plural">
+      &gt;1
+    </label>
+
+    <h2>
+      Verb
+    </h2>
+
+    <select id="verb">
+      <option value="none">---</option>
+      <option value="favorite">favorite</option>
+      <option value="follow">follow</option>
+      <option value="join">join</option>
+      <option value="like">like</option>
+      <option value="listen">listen</option>
+      <option value="make-friend">make-friend</option>
+      <option value="mention">mention</option>
+      <option value="play">play</option>
+      <option value="post">post</option>
+      <option value="reply">reply</option>
+      <option value="save">save</option>
+      <option value="share">share</option>
+      <option value="subscribe">subscribe</option>
+      <option value="tag">tag</option>
+      <option value="update">update</option>
+    </select>
+
+    <h2>
+      Object
+    </h2>
+
+    <select id="object">
+      <option value="none">---</option>
+      <option value="activity">activity</option>
+      <option value="album">album</option>
+      <option value="article">article</option>
+      <option value="audio">audio</option>
+      <option value="comment">comment</option>
+      <option value="file">file</option>
+      <option value="image">image</option>
+      <option value="list">list</option>
+      <option value="place">place</option>
+      <option value="status">status</option>
+      <option value="video">video</option>
+      <option value="note">note</option>
+    </select>
+    <label for="object_plural">
+      <input type="checkbox" name="object_plural" id="object_plural">
+      &gt;1
+    </label>
+    <br>
+    <br>
+
+    <label for="object_owner">owner:</label>
+    <input type="text" id="object_owner"></input>
+    <label for="object_owner">or pronoun:</label>
+    <select id="object_owner_pronoun">
+      <option value="none">---</option>
+      <option value="our">our</option>
+      <option value="their">their</option>
+      <option value="his">his</option>
+      <option value="her">her</option>
+      <option value="em">em</option>
+      <option value="Thor">Thor</option>
+      <option value="your">your</option>
+      <option value="hum">hum</option>
+      <option value="per">per</option>
+      <option value="thon">thon</option>
+      <option value="jem">jem</option>
+      <option value="ver">ver</option>
+      <option value="xem">xem</option>
+      <option value="zir">zir</option>
+      <option value="zem">zem</option>
+      <option value="hir">hir</option>
+      <option value="mer">mer</option>
+      <option value="zhim">zhim</option>
+    </select>
+    <label for="object_owner_plural">
+      <input type="checkbox" name="object_owner_plural" id="object_owner_plural">
+      &gt;1
+    </label>
+
+    <h2>
+      Target
+    </h2>
+
+    <select id="target">
+      <option value="none">---</option>
+      <option value="activity">activity</option>
+      <option value="album">album</option>
+      <option value="article">article</option>
+      <option value="audio">audio</option>
+      <option value="comment">comment</option>
+      <option value="file">file</option>
+      <option value="image">image</option>
+      <option value="list">list</option>
+      <option value="place">place</option>
+      <option value="status">status</option>
+      <option value="video">video</option>
+      <option value="note">note</option>
+    </select>
+    <label for="target_plural">
+      <input type="checkbox" name="target_plural" id="target_plural">
+      &gt;1
+    </label>
+    <br>
+    <br>
+
+    <label for="target_owner">owner:</label>
+    <input type="text" id="target_owner"></input>
+    <label for="target_owner">or pronoun:</label>
+    <select id="target_owner_pronoun">
+      <option value="none">---</option>
+      <option value="our">our</option>
+      <option value="their">their</option>
+      <option value="his">his</option>
+      <option value="her">her</option>
+      <option value="em">em</option>
+      <option value="Thor">Thor</option>
+      <option value="your">your</option>
+      <option value="hum">hum</option>
+      <option value="per">per</option>
+      <option value="thon">thon</option>
+      <option value="jem">jem</option>
+      <option value="ver">ver</option>
+      <option value="xem">xem</option>
+      <option value="zir">zir</option>
+      <option value="zem">zem</option>
+      <option value="hir">hir</option>
+      <option value="mer">mer</option>
+      <option value="zhim">zhim</option>
+    </select>
+    <label for="target_owner_plural">
+      <input type="checkbox" name="target_owner_plural" id="target_owner_plural">
+      &gt;1
+    </label>
+
+    <h2>
+      Output
+    </h2>
+
+    <ul>
+      <li>English: <span id="output_en"></span></li>
+      <li>español: <span id="output_es"></span></li>
+    </ul>
+
+    <script type='text/javascript' src='../bin/yaml.min.js'>
+    </script>
+    <script type='text/javascript' src='../bin/lotus.i18n.es.js'>
+    </script>
+    <script type='text/javascript' src='../bin/lotus.i18n.en.js'>
+    </script>
+    <script type='text/javascript' src='../bin/lotus.i18n.js'>
+    </script>
+    <script type='text/javascript' src='app.js'>
+    </script>
+  </body>
+</html>
