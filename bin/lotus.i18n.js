@@ -84,7 +84,7 @@ lotus.i18n.lexicon = function(options) {
   var locale = lotus.i18n.locale(options);
 
   if (locale in lotus.i18n.lexicons) {
-    return lotus.i18n.lexicons[locale][locale];
+    return lotus.i18n.lexicons[locale];
   }
 
   return null;
@@ -94,7 +94,7 @@ lotus.i18n.grammar = function(options) {
   var locale = lotus.i18n.locale(options);
 
   if (locale in lotus.i18n.grammars) {
-    return lotus.i18n.grammars[locale][locale];
+    return lotus.i18n.grammars[locale];
   }
 
   return null;

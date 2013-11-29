@@ -14,7 +14,7 @@ locales.forEach(function(locale) {
     stream.write("if (!(\"i18n\" in lotus)) { lotus.i18n = {}; }\n");
     stream.write("if (!(\"grammars\" in lotus.i18n)) { lotus.i18n.grammars = {}; }\n");
     stream.write("if (!(\"lexicons\" in lotus.i18n)) { lotus.i18n.lexicons = {}; }\n");
-    stream.write("lotus.i18n.grammars."+locale+" = " + JSON.stringify(grammar) + ";\n");
-    stream.write("lotus.i18n.lexicons."+locale+" = " + JSON.stringify(lexicon) + ";\n");
+    stream.write("lotus.i18n.grammars."+locale+" = " + JSON.stringify(grammar[locale]) + ";\n");
+    stream.write("lotus.i18n.lexicons."+locale+" = " + JSON.stringify(lexicon[locale]) + ";\n");
   });
 });
