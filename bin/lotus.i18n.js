@@ -11,16 +11,8 @@ if (!("i18n" in lotus)) {
   lotus.i18n = {}
 }
 
-if (!("raw_lexicons" in lotus.i18n)) {
-  lotus.i18n.raw_lexicons = {}
-}
-
 if (!("lexicons" in lotus.i18n)) {
   lotus.i18n.lexicons = {}
-}
-
-if (!("raw_grammars" in lotus.i18n)) {
-  lotus.i18n.raw_grammars = {}
 }
 
 if (!("grammars" in lotus.i18n)) {
@@ -95,8 +87,7 @@ lotus.i18n.lexicon = function(options) {
     return lotus.i18n.lexicons[locale];
   }
 
-  lotus.i18n.lexicons[locale] = YAML.parse(lotus.i18n.raw_lexicons[locale])[locale];
-  return lotus.i18n.lexicons[locale];
+  return null;
 }
 
 lotus.i18n.grammar = function(options) {
@@ -106,8 +97,7 @@ lotus.i18n.grammar = function(options) {
     return lotus.i18n.grammars[locale];
   }
 
-  lotus.i18n.grammars[locale] = YAML.parse(lotus.i18n.raw_grammars[locale])[locale];
-  return lotus.i18n.grammars[locale];
+  return null;
 };
 
 lotus.i18n.rules = function(options) {
