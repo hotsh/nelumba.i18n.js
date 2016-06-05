@@ -95,11 +95,11 @@ function update() {
     }
   }
 
-  var result = lotus.i18n.sentence(options);
+  var result = nelumba.i18n.sentence(options);
   document.getElementById("output_en").innerHTML = result;
 
   options.locale = "es";
-  result = lotus.i18n.sentence(options);
+  result = nelumba.i18n.sentence(options);
   document.getElementById("output_es").innerHTML = result;
 }
 

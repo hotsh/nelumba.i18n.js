@@ -1,26 +1,26 @@
-if (!("lotus" in window)) {
-  window.lotus = (function () {
-    var lotus = {
+if (!("nelumba" in window)) {
+  window.nelumba = (function () {
+    var nelumba = {
     };
 
-    return lotus;
+    return nelumba;
   }());
 }
 
-if (!("i18n" in lotus)) {
-  lotus.i18n = {}
+if (!("i18n" in nelumba)) {
+  nelumba.i18n = {}
 }
 
-if (!("lexicons" in lotus.i18n)) {
-  lotus.i18n.lexicons = {}
+if (!("lexicons" in nelumba.i18n)) {
+  nelumba.i18n.lexicons = {}
 }
 
-if (!("grammars" in lotus.i18n)) {
-  lotus.i18n.grammars = {}
+if (!("grammars" in nelumba.i18n)) {
+  nelumba.i18n.grammars = {}
 }
 
-if (!("rules" in lotus.i18n)) {
-  lotus.i18n.rules = {}
+if (!("rules" in nelumba.i18n)) {
+  nelumba.i18n.rules = {}
 }
 
 if (!('indexOf' in Array.prototype)) {
@@ -80,34 +80,34 @@ if (!('every' in Array.prototype)) {
   };
 }
 
-lotus.i18n.lexicon = function(options) {
-  var locale = lotus.i18n.locale(options);
+nelumba.i18n.lexicon = function(options) {
+  var locale = nelumba.i18n.locale(options);
 
-  if (locale in lotus.i18n.lexicons) {
-    return lotus.i18n.lexicons[locale];
+  if (locale in nelumba.i18n.lexicons) {
+    return nelumba.i18n.lexicons[locale];
   }
 
   return null;
 }
 
-lotus.i18n.grammar = function(options) {
-  var locale = lotus.i18n.locale(options);
+nelumba.i18n.grammar = function(options) {
+  var locale = nelumba.i18n.locale(options);
 
-  if (locale in lotus.i18n.grammars) {
-    return lotus.i18n.grammars[locale];
+  if (locale in nelumba.i18n.grammars) {
+    return nelumba.i18n.grammars[locale];
   }
 
   return null;
 };
 
-lotus.i18n.rules = function(options) {
-  var locale = lotus.i18n.locale(options);
+nelumba.i18n.rules = function(options) {
+  var locale = nelumba.i18n.locale(options);
 
-  if (locale in lotus.i18n.rules) {
-    return lotus.i18n.rules[locale];
+  if (locale in nelumba.i18n.rules) {
+    return nelumba.i18n.rules[locale];
   }
 
-  var grammar = lotus.i18n.grammar(options);
+  var grammar = nelumba.i18n.grammar(options);
   var rules = [];
 
   function cartProd(paramArray) {
@@ -215,18 +215,18 @@ lotus.i18n.rules = function(options) {
     }
   }
 
-  lotus.i18n.rules[locale] = rules;
+  nelumba.i18n.rules[locale] = rules;
 
-  return lotus.i18n.rules[locale];
+  return nelumba.i18n.rules[locale];
 };
 
-lotus.i18n.translate = function(tag, options) {
+nelumba.i18n.translate = function(tag, options) {
   if (options == undefined) {
     options = {};
   }
 
-  var locale = lotus.i18n.locale(options);
-  var lexicon = lotus.i18n.lexicon(options);
+  var locale = nelumba.i18n.locale(options);
+  var lexicon = nelumba.i18n.lexicon(options);
 
   function pathTo(obj,is) {
     function multiIndex(obj,is) {
@@ -238,10 +238,10 @@ lotus.i18n.translate = function(tag, options) {
   return pathTo(lexicon, tag);
 };
 
-lotus.i18n.sentence = function(options) {
-  var locale = lotus.i18n.locale(options);
-  var rules = lotus.i18n.rules(options);
-  var lexicon = lotus.i18n.lexicon(options);
+nelumba.i18n.sentence = function(options) {
+  var locale = nelumba.i18n.locale(options);
+  var rules = nelumba.i18n.rules(options);
+  var lexicon = nelumba.i18n.lexicon(options);
 
   var components = {};
   var elements = [];
@@ -399,7 +399,7 @@ lotus.i18n.sentence = function(options) {
 
             token = result.match(matcher);
             token = token[0].replace("%"+component+"%", value);
-            result = result.replace(matcher, lotus.i18n.translate(token, options));
+            result = result.replace(matcher, nelumba.i18n.translate(token, options));
           }
           else {
             result = result.replace("%"+component+"%", value);
@@ -416,7 +416,7 @@ lotus.i18n.sentence = function(options) {
   return result;
 };
 
-lotus.i18n.locale = function(options) {
+nelumba.i18n.locale = function(options) {
   var locale = options["locale"];
 
   if (!locale) {
@@ -426,17 +426,17 @@ lotus.i18n.locale = function(options) {
   return locale;
 };
 
-lotus.i18n.verbs = {
+nelumba.i18n.verbs = {
   post: { value: "post" }
 };
 
-lotus.i18n.objects = {
+nelumba.i18n.objects = {
   note:  { value: "note" },
   album: { value: "album" },
   file:  { value: "file" }
 };
 
-lotus.i18n.pronouns = {
+nelumba.i18n.pronouns = {
   he:  { value: "he" },
   she: { value: "she" },
   ey:  { value: "ey" }
